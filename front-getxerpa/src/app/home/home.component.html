@@ -1,0 +1,46 @@
+<mat-toolbar style="background-color: #F1EDFC;">
+    <button mat-icon-button aria-label="Example icon-button with menu icon">
+      <mat-icon style="color: black; font-size: 25px;">keyboard_arrow_left</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="container mt-3">
+    <div class="card row" style="border: none;">
+      <h2><b>Gastos por categoría</b></h2>
+        <div class="card-body">
+          <div *ngFor="let category of categories">
+            <div class="d-flex">
+              <div class="mt-2 p-1">
+                <div class="circle" ></div>
+              </div>
+              <div style="width: 100%;" class="p-3">
+                <h3><b>{{category.name}}</b></h3>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p>Gastado</p>
+                    <p>$ {{category.total_expenses}}</p>
+                  </div>
+                  <div>
+                    <p>Límite</p>
+                    <p>$ {{category.limit}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="align-self-center">
+                <button mat-icon-button routerLink="/category-deatil/{{category.id}}">
+                  <mat-icon style="color: black; font-size: 25px;">keyboard_arrow_right</mat-icon>
+                </button>
+              </div>
+            </div>
+            <div  style="padding-left: 70px;padding-right: 60px;">
+              <mat-progress-bar mode="determinate" value="{{category.percent_expensed}}"></mat-progress-bar>
+              <p class="pt-2">{{category.percent_expensed}}% del presupuesto gastado</p>
+            </div>
+          </div>
+          
+        </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

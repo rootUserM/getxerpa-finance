@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+/* src/styles.css or src/styles.scss */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #8E24AA;
+    border-radius: 50%;
+  }

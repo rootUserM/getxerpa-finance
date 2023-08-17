@@ -1,0 +1,47 @@
+<mat-toolbar style="background-color: #F1EDFC;">
+    <button mat-icon-button aria-label="Example icon-button with menu icon">
+      <mat-icon style="color: black; font-size: 25px;">keyboard_arrow_left</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="container mt-3">
+    <div class="card row" style="border: none;">
+        <div class="card-body">
+            <div class="mt-2 p-1 ">
+                <div > <div class="circle" ></div></div>
+                
+                <div ><h2><b>{{category.category_detail.name }}</b></h2></div>
+            </div>
+            
+              <div class="d-flex">
+                <div class="p-2" >
+                  <p>Gasto Total</p>
+                  <p>$ {{category.category_detail.total_expenses}}</p>
+                </div>
+                <div class="p-2 text-center">
+                  <p>Movimientos</p>
+                  <p>{{category.category_detail.count_transactions}}</p>
+                </div>
+              </div>
+          <div><h2><b>Mi presupuesto</b></h2></div>
+              <div class="d-flex">
+                <div class="p-2">
+                  <p>Presupuesto</p>
+                  <p>$ {{category.category_detail.limit}}</p>
+                </div>
+                <div class="p-2">
+                  <p>Disponible</p>
+                  <p>$ {{category.category_detail.amount_avilable}}</p>
+                </div>
+              </div>
+          <div style="width: 50%;">
+            <p class="pt-2">{{category.category_detail.percent_expensed}}% del presupuesto gastado</p>
+            <mat-progress-bar mode="determinate" value="{{category.category_detail.percent_expensed}}"></mat-progress-bar>
+          </div>
+          
+        </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
