@@ -8,7 +8,7 @@ import { FinanceService } from '../finance.service';
   styleUrls: ['./category-detail.component.css']
 })
 export class CategoryDetailComponent {
-  category: any;
+  cat_transaction: any;
 
   constructor(private route: ActivatedRoute, private financeService: FinanceService) { }
 
@@ -18,8 +18,8 @@ export class CategoryDetailComponent {
       if (categoryId) {
         this.financeService.getCategory(Number(categoryId)).subscribe(
           (data) => {
-            this.category = data;
-            console.log(this.category)
+            this.cat_transaction = data;
+            console.log(this.cat_transaction)
           },
           (error) => {
             console.error('Error fetching category by ID:', error);

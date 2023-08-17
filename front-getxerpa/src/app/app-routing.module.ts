@@ -4,8 +4,8 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
 import { TransactionDetailComponent } from './transaction-detail/transaction-detail.component';
 import { HomeComponent } from './home/home.component';
 const routes: Routes = [
-  {path: 'category-deatil/:id', component : CategoryDetailComponent},
-  {path: 'transaction-deatil', component: TransactionDetailComponent},
+  {path: 'category-detail/:id', component : CategoryDetailComponent},
+  {path: 'transaction-detail/:id', component: TransactionDetailComponent},
   {path : '', component: HomeComponent}
 ];
 

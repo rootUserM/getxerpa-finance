@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
+from datetime import datetime
 from getxerpa.finance.models import Category, Transaction
 
 
@@ -73,6 +74,28 @@ class CategoryExpensesDetailSerializer(CategoryExpensesSerializer):
 
 class TransactionSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
+    t_config = serializers.SerializerMethodField()
+    group_title = serializers.SerializerMethodField()
+
+    def get_t_config(self,obj):
+        date_n_m = obj.time_created.strftime('%d %B')
+        month = obj.time_created.strftime('%B')
+        hour = obj.time_created.strftime("%I:%M %p")
+        result = {
+            'date_n_m':date_n_m,
+            'month':month,
+            'hour':hour
+        }
+        return result
+    def get_group_title(self, obj):
+        today = datetime.now().date()
+        trans_date = obj.time_created.date()
+        
+        if trans_date == today:
+            return 'Hoy'
+        else:
+            return trans_date.strftime('%d %B')
+
     class Meta:
         model = Transaction
         fields = '__all__'
