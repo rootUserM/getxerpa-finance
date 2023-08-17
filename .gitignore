@@ -160,13 +160,13 @@ cython_debug/
 #.idea/
 
 .DS_STORE
-
+.angular/
 /dist/
 /bazel-out
 /integration/bazel/bazel-*
 *.log
 /node_modules/
-
+angular/
 # CircleCI temporary file for cache key computation.
 # See `save_month_to_file` in `.circleci/config.yml`.
 month.txt
